@@ -2,6 +2,8 @@ package Super;
 
 public class Parent {
 	
+	public String value = "parent";
+	
 	public void method1() {
 		System.out.println("Parent-method1()");
 	}
