@@ -16,5 +16,7 @@ public class CatchOrderExample {
 		}finally {
 			System.out.println("다시 실행하세요");
 		}
+		//catch문 에 있는 실행 매개값의 수가 부족하다 라는 문구가 출력이 되면서 하위 catch블록은 실행이 되지 않음
+		//그래서 finally 가 실행이 되면서 다시 실행하세요가 출력이 된다
 	}
 }
