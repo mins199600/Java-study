@@ -19,14 +19,9 @@ public class Buyer {
 		kim.buy(tv);	//100
 		kim.buy(notebook);	//200
 		kim.buy(handphone);	//149
-		
+		kim.refund(tv);
 		//추가 구입
 		kim.buy(notebook);
-		kim.buy(notebook);
-		kim.buy(notebook);
-		kim.buy(notebook);
-		kim.buy(notebook);
-		
 		
 		kim.display();	//551 , 마일리지 44
 		
