@@ -3,6 +3,7 @@ package generic;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 
 class Mountain{
 	String name;
@@ -38,7 +39,24 @@ public class GenericPractice {
 		item.add(m1);
 		item.add(m2);
 		System.out.println(item.add(m3));
+		System.out.println(item);
 		
+		//인덱스로 요소 접근 : 데이터 베이스가 몇개가 있는지 알때
+		for(int i = 0; i<item.size(); i++) {
+			item.get(i);
+		}
+		
+		//커서로 요소 접근 : 외부에 있는 정보를 가져올때 사용, 데이터 베이스의 값이 몇개인지 모를때
+		Iterator<Mountain> cursor = item.iterator();
+		//mountain객체를 순회하기 위해 Iterator를 생성
+		while (cursor.hasNext()) {
+			//커서가 다음 요소가 있으면 루프 진행
+			Mountain m = cursor.next();
+			//커서 다음 요소를 변수 m에 저장
+			System.out.println(m.name);
+			System.out.println(m.height);
+			
+		}
 		
 		
 	}
