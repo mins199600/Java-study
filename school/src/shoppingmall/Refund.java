@@ -1,5 +1,6 @@
 package shoppingmall;
 
+//상품을 중복해서 구매하지 않았다는 전제하 반품
 public class Refund {
 	private Buyer2 buyer;
 
