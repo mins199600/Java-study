@@ -1,0 +1,774 @@
+From 679404e8417320566ee9e97dde1a3a9b84a9da10 Mon Sep 17 00:00:00 2001
+From: sumin <mins19960091@gmail.com>
+Date: Wed, 7 Aug 2024 14:41:14 +0900
+Subject: [PATCH] =?UTF-8?q?=EC=A0=91=EA=B7=BC=EC=A0=9C=EC=96=B4=EC=9E=90?=
+ =?UTF-8?q?=20=EB=AC=B8=EC=A0=9C=ED=92=80=EC=9D=B4=20=EB=B0=8F=20=EC=9E=90?=
+ =?UTF-8?q?=EB=B0=94=20=EB=A9=94=EB=AA=A8=EB=A6=AC=20=EA=B5=AC=EC=A1=B0=20?=
+ =?UTF-8?q?static=20=EA=B5=AC=EC=A1=B0=20=EA=B3=B5=EB=B6=80?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ school/src/access/Speaker.java                | 29 +++++++++++
+ school/src/access/SpeakerMain.java            | 20 ++++++++
+ school/src/bank/Account.java                  | 18 +++++++
+ school/src/bank/AccountMain.java              | 13 +++++
+ school/src/bank/BankAccount.java              | 34 +++++++++++++
+ school/src/bank/bankAccountMain.java          | 10 ++++
+ school/src/memory/static1/Data1.java          | 12 +++++
+ school/src/memory/static1/Data3.java          | 12 +++++
+ school/src/memory/static1/DataCountMain1.java | 14 ++++++
+ school/src/memory/static1/DataCountMain3.java | 15 ++++++
+ .../memory/staticMemory/JavaMemoryMain1.java  | 21 ++++++++
+ .../memory/staticMemory/JavaMemoryMain2.java  | 25 ++++++++++
+ school/src/oop1/RectangleProceduralMain.java  | 10 ++++
+ school/src/oop1/RetangleProcedura.java        | 25 ++++++++++
+ school/src/pack/Data.java                     | 13 +++++
+ school/src/pack/PackageMain1.java             | 12 +++++
+ school/src/pack/a/User.java                   |  9 ++++
+ school/src/shopping/Item.java                 | 17 +++++++
+ school/src/shopping/MaxCounter.java           | 32 ++++++++++++
+ school/src/shopping/ShoppingCart.java         | 50 +++++++++++++++++++
+ school/src/shoppingex/MaxCounterMain.java     | 19 +++++++
+ school/src/shoppingex/ShoppingCartMain.java   | 21 ++++++++
+ school/src/static2/DecoData.java              | 25 ++++++++++
+ school/src/static2/DecoDataMain.java          | 25 ++++++++++
+ school/src/static2/DecoMain1.java             | 14 ++++++
+ school/src/static2/DecoMain2.java             | 12 +++++
+ school/src/static2/DecoUtil1.java             | 13 +++++
+ school/src/static2/DecoUtil2.java             | 13 +++++
+ 28 files changed, 533 insertions(+)
+ create mode 100644 school/src/access/Speaker.java
+ create mode 100644 school/src/access/SpeakerMain.java
+ create mode 100644 school/src/bank/Account.java
+ create mode 100644 school/src/bank/AccountMain.java
+ create mode 100644 school/src/bank/BankAccount.java
+ create mode 100644 school/src/bank/bankAccountMain.java
+ create mode 100644 school/src/memory/static1/Data1.java
+ create mode 100644 school/src/memory/static1/Data3.java
+ create mode 100644 school/src/memory/static1/DataCountMain1.java
+ create mode 100644 school/src/memory/static1/DataCountMain3.java
+ create mode 100644 school/src/memory/staticMemory/JavaMemoryMain1.java
+ create mode 100644 school/src/memory/staticMemory/JavaMemoryMain2.java
+ create mode 100644 school/src/oop1/RectangleProceduralMain.java
+ create mode 100644 school/src/oop1/RetangleProcedura.java
+ create mode 100644 school/src/pack/Data.java
+ create mode 100644 school/src/pack/PackageMain1.java
+ create mode 100644 school/src/pack/a/User.java
+ create mode 100644 school/src/shopping/Item.java
+ create mode 100644 school/src/shopping/MaxCounter.java
+ create mode 100644 school/src/shopping/ShoppingCart.java
+ create mode 100644 school/src/shoppingex/MaxCounterMain.java
+ create mode 100644 school/src/shoppingex/ShoppingCartMain.java
+ create mode 100644 school/src/static2/DecoData.java
+ create mode 100644 school/src/static2/DecoDataMain.java
+ create mode 100644 school/src/static2/DecoMain1.java
+ create mode 100644 school/src/static2/DecoMain2.java
+ create mode 100644 school/src/static2/DecoUtil1.java
+ create mode 100644 school/src/static2/DecoUtil2.java
+
+diff --git a/school/src/access/Speaker.java b/school/src/access/Speaker.java
+new file mode 100644
+index 0000000..a45c172
+--- /dev/null
++++ b/school/src/access/Speaker.java
+@@ -0,0 +1,29 @@
++package access;
++
++public class Speaker {
++	
++	private int volume;
++	//초기 볼륨값 설정
++	Speaker(int volume){
++		this.volume = volume;
++	}
++	//생성자를 통해서
++	//=================================================================
++
++	void volumeUp() {
++		if(volume >= 100) {
++			System.out.println("음량을 증가할 수 없습니다. 최대 음량 입니다");
++		}else {
++			volume+= 10;
++			System.out.println("음량을 10 증가합니다");
++		}
++	}
++
++	void volumeDown() {
++		volume -= 10;
++		System.out.println("음량이 10 줄었습니다");
++	}
++	void showVolume() {
++		System.out.println("현재음량: " + volume);
++	}
++}
+diff --git a/school/src/access/SpeakerMain.java b/school/src/access/SpeakerMain.java
+new file mode 100644
+index 0000000..7df4538
+--- /dev/null
++++ b/school/src/access/SpeakerMain.java
+@@ -0,0 +1,20 @@
++package access;
++
++public class SpeakerMain {
++	public static void main(String[] args) {
++		Speaker speaker = new Speaker(90);
++		speaker.showVolume();
++		speaker.volumeUp();
++		speaker.showVolume();
++		
++		speaker.volumeUp();
++		speaker.showVolume();
++		
++		//필드에 직접 접근
++		System.out.println("volume필드 직접 접근 수정");
++		//speaker.volume = 200;
++		speaker.showVolume();
++		
++	}
++	
++}
+diff --git a/school/src/bank/Account.java b/school/src/bank/Account.java
+new file mode 100644
+index 0000000..459f485
+--- /dev/null
++++ b/school/src/bank/Account.java
+@@ -0,0 +1,18 @@
++package bank;
++
++public class Account {
++	int balance;	//잔액
++	
++	void deposit(int amount) {
++		balance += amount;
++	}
++
++	void withdraw(int amount) {
++		if(balance >= amount) {
++			balance -= amount;
++		} else {
++			System.out.println("잔액부족");
++		}
++		
++	}
++}
+diff --git a/school/src/bank/AccountMain.java b/school/src/bank/AccountMain.java
+new file mode 100644
+index 0000000..e4b3de3
+--- /dev/null
++++ b/school/src/bank/AccountMain.java
+@@ -0,0 +1,13 @@
++package bank;
++
++public class AccountMain {
++	public AccountMain() {
++		Account account = new Account();
++		account.deposit(10000);
++		account.withdraw(9000);
++		account.withdraw(2000);
++		
++		System.out.println("잔고: " + account.balance);
++	}
++
++}
+diff --git a/school/src/bank/BankAccount.java b/school/src/bank/BankAccount.java
+new file mode 100644
+index 0000000..3866ad5
+--- /dev/null
++++ b/school/src/bank/BankAccount.java
+@@ -0,0 +1,34 @@
++package bank;
++
++public class BankAccount {
++	
++	private int balance;
++	
++	public BankAccount() {
++		this.balance = 0;
++	}
++	
++	public void deposit(int amount) {
++		if(isAmountValid(amount)) {
++		balance += amount;
++		}else {
++			System.out.println("유효하지 않은 금액 입니다");
++		}
++	}
++	
++	public void withdraw(int amount) {
++		if(isAmountValid(amount)&& balance - amount >= 0) {
++			balance -= amount;
++		}else {
++			System.out.println("유효하지 않은 금액이거나 잔액이 부족합니다.");
++		}
++	}
++	
++	public int getBalance() {
++		return balance;
++	}
++	
++	private boolean isAmountValid(int amount) {
++		return amount > 0;
++	}
++}
+diff --git a/school/src/bank/bankAccountMain.java b/school/src/bank/bankAccountMain.java
+new file mode 100644
+index 0000000..9f71f95
+--- /dev/null
++++ b/school/src/bank/bankAccountMain.java
+@@ -0,0 +1,10 @@
++package bank;
++
++public class bankAccountMain {
++	public static void main(String[] args) {
++		BankAccount account = new BankAccount();
++		account.deposit(10000);
++		account.withdraw(3000);
++		System.out.println("balance = " + account.getBalance());
++	}
++}
+diff --git a/school/src/memory/static1/Data1.java b/school/src/memory/static1/Data1.java
+new file mode 100644
+index 0000000..bb7dac4
+--- /dev/null
++++ b/school/src/memory/static1/Data1.java
+@@ -0,0 +1,12 @@
++package memory.static1;
++
++public class Data1 {
++	public String name;
++	public int count;
++
++	
++	public Data1(String name) {
++		this.name = name;
++		count++;
++	}
++}
+diff --git a/school/src/memory/static1/Data3.java b/school/src/memory/static1/Data3.java
+new file mode 100644
+index 0000000..0356756
+--- /dev/null
++++ b/school/src/memory/static1/Data3.java
+@@ -0,0 +1,12 @@
++package memory.static1;
++
++public class Data3 {
++	public String name;
++	public static int count;	//static
++	
++	public Data3(String name) {
++		this.name = name;
++		count++;
++	}
++
++}
+diff --git a/school/src/memory/static1/DataCountMain1.java b/school/src/memory/static1/DataCountMain1.java
+new file mode 100644
+index 0000000..44ee89a
+--- /dev/null
++++ b/school/src/memory/static1/DataCountMain1.java
+@@ -0,0 +1,14 @@
++package memory.static1;
++
++public class DataCountMain1 {
++	public static void main(String[] args) {
++		Data1 data1 = new Data1("A");
++		System.out.println("A count = " + data1.count);
++		
++		Data1 data2 = new Data1("B");
++		System.out.println("B count = " + data2.count);
++		
++		Data1 data3 = new Data1("C");
++		System.out.println("C count = " + data3.count);
++	}
++}
+diff --git a/school/src/memory/static1/DataCountMain3.java b/school/src/memory/static1/DataCountMain3.java
+new file mode 100644
+index 0000000..b225c2f
+--- /dev/null
++++ b/school/src/memory/static1/DataCountMain3.java
+@@ -0,0 +1,15 @@
++package memory.static1;
++
++public class DataCountMain3 {
++	public static void main(String[] args) {
++		Data3 data1 = new Data3("A");
++		System.out.println("A count = " + Data3.count);
++		
++		Data3 data2 = new Data3("B");
++		System.out.println("B count = " + Data3.count);
++		
++		Data3 data3 = new Data3("C");
++		System.out.println("C count = " + Data3.count);
++	}
++
++}
+diff --git a/school/src/memory/staticMemory/JavaMemoryMain1.java b/school/src/memory/staticMemory/JavaMemoryMain1.java
+new file mode 100644
+index 0000000..2b4339c
+--- /dev/null
++++ b/school/src/memory/staticMemory/JavaMemoryMain1.java
+@@ -0,0 +1,21 @@
++package memory.staticMemory;
++
++public class JavaMemoryMain1 {
++	public static void main(String[] args) {
++		System.out.println("main start");
++		method1(10);
++		System.out.println("main end");
++		
++	}
++	static void method1(int m1) {
++		System.out.println("method1 start");
++		int cal = m1*2;
++		method2(cal);
++		System.out.println("method1 end");
++	}
++	
++	static void method2(int m2) {
++		System.out.println("method2 end");
++	}
++
++}
+diff --git a/school/src/memory/staticMemory/JavaMemoryMain2.java b/school/src/memory/staticMemory/JavaMemoryMain2.java
+new file mode 100644
+index 0000000..3e772d6
+--- /dev/null
++++ b/school/src/memory/staticMemory/JavaMemoryMain2.java
+@@ -0,0 +1,25 @@
++package memory.staticMemory;
++
++import pack.Data;
++
++public class JavaMemoryMain2 {
++	public static void main(String[] args) {
++		System.out.println("main start");
++		method1();
++		System.out.println("main end");
++	}
++
++	static void method1() {
++		System.out.println("method1 start");
++		Data data1 = new Data(10);
++		method2(data1);
++	}
++
++	 static void method2(Data data2) {
++		System.out.println("method2 start");
++		System.out.println("data.value" + data2.getValue());
++		System.out.println("method2 end");
++		
++	}
++
++}
+diff --git a/school/src/oop1/RectangleProceduralMain.java b/school/src/oop1/RectangleProceduralMain.java
+new file mode 100644
+index 0000000..22b49d9
+--- /dev/null
++++ b/school/src/oop1/RectangleProceduralMain.java
+@@ -0,0 +1,10 @@
++package oop1;
++
++public class RectangleProceduralMain {
++	public static void main(String[] args) {
++		RetangleProcedura ractangle = new RetangleProcedura();
++		ractangle.calculateArea(70, 70);
++		ractangle.calculatePerimeter(15, 15);
++		ractangle.isSquare(10, 10);
++	}
++}
+diff --git a/school/src/oop1/RetangleProcedura.java b/school/src/oop1/RetangleProcedura.java
+new file mode 100644
+index 0000000..7ac18d3
+--- /dev/null
++++ b/school/src/oop1/RetangleProcedura.java
+@@ -0,0 +1,25 @@
++package oop1;
++
++public class RetangleProcedura {
++	int width;
++	int height;
++	
++	//넓이
++	int calculateArea(int width, int height) {
++		int result = width * height;
++		System.out.println("넓이: " + result);
++		return result;
++	}
++	//둘레
++	int calculatePerimeter(int width, int height) {
++		int result = 2*(width + height);
++		System.out.println(result);
++		return result;
++	}
++	
++	//정사각형 여부
++	boolean isSquare(int width, int height) {
++		return this.width == this.height;
++	}
++
++}
+diff --git a/school/src/pack/Data.java b/school/src/pack/Data.java
+new file mode 100644
+index 0000000..1cffc9f
+--- /dev/null
++++ b/school/src/pack/Data.java
+@@ -0,0 +1,13 @@
++package pack;
++
++public class Data {
++	public Data(int i) {
++		System.out.println("패키지 팩 데이터 생성");
++	}
++
++	public String getValue() {
++		// TODO Auto-generated method stub
++		return null;
++	}
++
++}
+diff --git a/school/src/pack/PackageMain1.java b/school/src/pack/PackageMain1.java
+new file mode 100644
+index 0000000..6183231
+--- /dev/null
++++ b/school/src/pack/PackageMain1.java
+@@ -0,0 +1,12 @@
++package pack;
++
++//import pack.a.User;
++import pack.a.*;
++
++public class PackageMain1 {
++	public static void main(String[] args) {
++		Data data = new Data();
++		User user = new User();
++	}
++
++}
+diff --git a/school/src/pack/a/User.java b/school/src/pack/a/User.java
+new file mode 100644
+index 0000000..83fc064
+--- /dev/null
++++ b/school/src/pack/a/User.java
+@@ -0,0 +1,9 @@
++package pack.a;
++
++public class User {
++	
++	public User() {
++		System.out.println("회원 생성");
++	}
++
++}
+diff --git a/school/src/shopping/Item.java b/school/src/shopping/Item.java
+new file mode 100644
+index 0000000..129931c
+--- /dev/null
++++ b/school/src/shopping/Item.java
+@@ -0,0 +1,17 @@
++package shopping;
++
++public class Item {
++	String name;
++	int price;
++	int quantity;
++	
++	//기본생성자 : 객체를 생성할때 초기값을 생성하지 않고도 객체를 만들수 있다
++	public Item() {}
++	
++	public Item(String name, int price, int quantity) {
++			this.name = name;
++			this.price = price;
++			this.quantity = quantity;
++	}
++
++}
+diff --git a/school/src/shopping/MaxCounter.java b/school/src/shopping/MaxCounter.java
+new file mode 100644
+index 0000000..85cb55d
+--- /dev/null
++++ b/school/src/shopping/MaxCounter.java
+@@ -0,0 +1,32 @@
++package shopping;
++
++public class MaxCounter {
++	
++	private int count = 0;	//내부에서 사용하는 숫자
++	int max;	//최대값
++	int increment;
++	
++	/*
++	 * public void counter(int max) { this.max = max; increment++; }
++	 */
++	
++	public MaxCounter(int max) {
++		this.max = max;
++	}
++	
++	//생성자는 객체를 초기화 하는 작업을 수행할때 쓰는거니까 증감시키는 작업은 메소드로 수행해야한다
++	public void increment() {
++		if(count < max) {
++			count++;
++		}
++	}
++
++	/*
++	 * public int getCount() { increment++; return increment; }
++	 */
++	//현재 카운트를 반환하는 메소드
++	public int getCount() {
++		return count;
++	}
++
++}
+diff --git a/school/src/shopping/ShoppingCart.java b/school/src/shopping/ShoppingCart.java
+new file mode 100644
+index 0000000..756f7da
+--- /dev/null
++++ b/school/src/shopping/ShoppingCart.java
+@@ -0,0 +1,50 @@
++package shopping;
++
++import java.util.Iterator;
++
++public class ShoppingCart {
++	
++	private Item[] items = new Item[10];
++	private int itemCount = 0;	//현재 아이템 수
++	
++	/*
++	 * for(int i = 0; i.intArray.lenght; i++) { if(intArray[i]>max) { max =
++	 * intarray(i); } }
++	 * 
++	 * System.out.println("최대 10개 까지만 담을 수 있습니다");
++	 * 
++	 * }
++	 */
++	
++	//아이템 추가 메소드
++	public void addItem(Item item) {
++		if(itemCount < 10) {
++			//현재 아이템수가 10보다 작은지 확인하고 10보다 작으면 아이템 추가
++			items[itemCount++] = item;
++		}else {
++			System.out.println("최대 10개까지만 담을 수 있습니다");
++		}
++	}
++	
++	 // 총 금액 계산 메서드
++    public int getTotalPrice() {
++        int total = 0;	//총 금액 초기화
++        for (int i = 0; i < itemCount; i++) {
++        	//카트에 담긴 모든 아이템의 가격을 합산
++            total += items[i].price * items[i].quantity;
++            //각 아이템의 가격 * 수량
++        }
++        return total;
++        //총 금액 반환
++    }
++	
++	//아이템 목록 출력 메소드
++	public void printItems() {
++		System.out.println("구매한 아이템: ");
++		for(int i = 0; i< itemCount; i++) {
++			//카드에 담긴 정보 출력
++			System.out.println(items[i].name + " : " + items[i].price + "원, 수량:" + items[i].quantity);
++		}
++		System.out.println("총 금액 : " + getTotalPrice() + "원");
++	}
++}
+diff --git a/school/src/shoppingex/MaxCounterMain.java b/school/src/shoppingex/MaxCounterMain.java
+new file mode 100644
+index 0000000..702fbab
+--- /dev/null
++++ b/school/src/shoppingex/MaxCounterMain.java
+@@ -0,0 +1,19 @@
++package shoppingex;
++
++import shopping.MaxCounter;
++
++public class MaxCounterMain {
++	
++	public static void main(String[] args) {
++		MaxCounter maxCounter = new MaxCounter(3);
++		
++		//카운터 증가시키기
++		maxCounter.increment();	//1
++		maxCounter.increment();	//2
++		maxCounter.increment();	//3
++		maxCounter.increment();	//증가하지 않음(최대값 도달)
++		
++		System.out.println("현재 카운트 : " + maxCounter.getCount());	//결과 출력
++	}
++
++}
+diff --git a/school/src/shoppingex/ShoppingCartMain.java b/school/src/shoppingex/ShoppingCartMain.java
+new file mode 100644
+index 0000000..eeb5a63
+--- /dev/null
++++ b/school/src/shoppingex/ShoppingCartMain.java
+@@ -0,0 +1,21 @@
++package shoppingex;
++
++import shopping.Item;
++import shopping.ShoppingCart;
++
++public class ShoppingCartMain {
++	public static void main(String[] args) {
++		ShoppingCart cart = new ShoppingCart();
++		
++		Item item1 = new Item("사과",1000,1);
++		cart.addItem(item1);
++		
++		Item item2 = new Item("바나나",9000,1);
++		cart.addItem(item2);
++		
++		 cart.printItems(); // 아이템 목록 및 총 금액 출력
++		
++	}
++	
++
++}
+diff --git a/school/src/static2/DecoData.java b/school/src/static2/DecoData.java
+new file mode 100644
+index 0000000..3c65c84
+--- /dev/null
++++ b/school/src/static2/DecoData.java
+@@ -0,0 +1,25 @@
++package static2;
++
++public class DecoData {
++	
++	private int instanceValue;
++	private static int staticValue;
++	
++	public static void staticCall() {
++		staticValue++;
++		//정적 변수 접근
++		staticMethod();
++	}
++	
++	public void instanceCall() {
++		instanceValue++;
++	}
++	
++	
++	private void instanceMethod() {
++		System.out.println("instanceValue = " + instanceValue);
++	}
++	private static void staticMethod() {
++		System.out.println("staticValue = " + staticValue);
++	}
++}
+diff --git a/school/src/static2/DecoDataMain.java b/school/src/static2/DecoDataMain.java
+new file mode 100644
+index 0000000..b5ccfea
+--- /dev/null
++++ b/school/src/static2/DecoDataMain.java
+@@ -0,0 +1,25 @@
++package static2;
++
++public class DecoDataMain {
++	public static void main(String[] args) {
++		System.out.println("1.정적 호출");
++		DecoData.staticCall();
++		
++		System.out.println("2. 인스턴스 호출");
++		DecoData data1 = new DecoData();
++		data1.instanceCall();
++		
++		System.out.println("2. 인스턴스 호출");
++		DecoData data2 = new DecoData();
++		data2.instanceCall();
++		
++		//추가
++		//인스턴스를 통한 접근
++		DecoData data3 = new DecoData();
++		data3.staticCall();
++		
++		//클래스를 통한 접근
++		DecoData.staticCall();
++	}
++
++}
+diff --git a/school/src/static2/DecoMain1.java b/school/src/static2/DecoMain1.java
+new file mode 100644
+index 0000000..47a21cc
+--- /dev/null
++++ b/school/src/static2/DecoMain1.java
+@@ -0,0 +1,14 @@
++package static2;
++
++public class DecoMain1 {
++	public static void main(String[] args) {
++		String s = "hello java";
++		DecoUtil1 util = new DecoUtil1();
++		String deco = util.deco(s);
++		
++		
++		System.out.println("before : " + s);
++		System.out.println("after : " + deco);
++	}
++
++}
+diff --git a/school/src/static2/DecoMain2.java b/school/src/static2/DecoMain2.java
+new file mode 100644
+index 0000000..4ced16b
+--- /dev/null
++++ b/school/src/static2/DecoMain2.java
+@@ -0,0 +1,12 @@
++package static2;
++
++public class DecoMain2 {
++	public static void main(String[] args) {
++		String s = "hello java";
++		String deco = DecoUtil2.deco(s);
++		
++		System.out.println("before : " + s);
++		System.out.println("after : " + deco);
++	}
++
++}
+diff --git a/school/src/static2/DecoUtil1.java b/school/src/static2/DecoUtil1.java
+new file mode 100644
+index 0000000..93d590e
+--- /dev/null
++++ b/school/src/static2/DecoUtil1.java
+@@ -0,0 +1,13 @@
++package static2;
++
++public class DecoUtil1 {
++	
++	public String deco(String str) {
++		
++		String result = "*" + str + "*";
++		// 문자열이 들어오면 꾸며주는곳
++		return result;
++		
++	}
++
++}
+diff --git a/school/src/static2/DecoUtil2.java b/school/src/static2/DecoUtil2.java
+new file mode 100644
+index 0000000..4bc7b53
+--- /dev/null
++++ b/school/src/static2/DecoUtil2.java
+@@ -0,0 +1,13 @@
++package static2;
++
++public class DecoUtil2 {
++	
++	public static String deco(String str) {
++		
++		String result = "*" + str + "*";
++		// 문자열이 들어오면 꾸며주는곳
++		return result;
++		
++	}
++
++}
+-- 
+2.46.0.windows.1
+
